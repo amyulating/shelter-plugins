@@ -26,7 +26,7 @@ function createRandomBullshit(length) {
 	return bullshit
 }
 
-unintercept = intercept((dispatch) => {
+const unintercept = intercept((dispatch) => {
 	if (dispatch?.type === "UPLOAD_ATTACHMENT_ADD_FILES") {
 		dispatch?.files?.forEach(({ file }) => {
 			if (!file?.name) return;
