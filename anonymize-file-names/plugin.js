@@ -25,7 +25,7 @@ const unintercept = intercept((dispatch) => {
 			if (!file?.name) return;
 			let newFilename = createRandomBullshit(10);
 			if (file.name.includes(".")) {
-				const dotIndex = store.matchDotSeparators ? file.name.lastIndexOf(".") : file.name.indexOf(".");
+				const dotIndex = file.name.lastIndexOf(".");
 				newFilename += file.name.slice(dotIndex);
 			}
 			Object.defineProperty(file, "name", { value: newFilename });
