@@ -34,9 +34,7 @@ const unintercept = intercept((dispatch) => {
 			let newFilename = createRandomBullshit(10)
 
 			if (file.name.includes(".")) {
-				const dotIndex = store.matchDotSeparators
-					? file.name.lastIndexOf(".")
-					: file.name.indexOf(".");
+				const dotIndex = file.name.lastIndexOf(".")
 
 				// append file extension(s)
 				newFilename += file.name.slice(dotIndex);
